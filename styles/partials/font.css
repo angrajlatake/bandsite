@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Avenir Regular";
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("otf");
+}
+@font-face {
+  font-family: "Avenir Demi";
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf) format("otf");
+}
+@font-face {
+  font-family: "Avenir Bold";
+  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("otf");
+}/*# sourceMappingURL=font.css.map */

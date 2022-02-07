@@ -1,3 +1,213 @@
+@use "./font.scss" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./reset" as *;
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.wrapper {
+  margin: 0 1rem;
+  @include tablet {
+    margin: 0 2.25rem;
+  }
+  @include desktop {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+}
+.padding-bottom {
+  padding-bottom: 1rem;
+  @include tablet {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.page-header {
+  font-family: "Avenir Demi";
+  font-size: 2rem;
+  line-height: 2rem;
+  color: $primary-white;
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+.section-header {
+  font-family: "Avenir Demi";
+  font-size: 1.75rem;
+  line-height: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+  }
+}
+.subheader {
+  font-family: "Avenir Demi";
+  font-size: 1rem;
+  line-height: 1.75rem;
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+}
+.body-copy {
+  font-family: "Avenir Regular";
+  font-size: 0.9375rem;
+  line-height: 1.375rem;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.footer-copy {
+  font-family: "Avenir Regular";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+.lable-btn {
+  font-family: "Avenir Regular";
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+.nav {
+  background-color: $primary-black;
+  padding-top: 1rem;
+  @include tablet{
+    padding-top: 1.5rem;
+  }
+  &__wrapper {
+    margin: 0;
+    @include tablet {
+      display: flex;
+      margin: 0 2.25rem;
+    }
+    @include desktop {
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+  }
+  &__logo {
+    text-align: center;
+    .logo__img {
+      width: 8.75rem;
+      @extend .padding-bottom;
+      @include tablet {
+        margin-right: 3rem;
+      }
+    }
+  }
+  &__menu {
+    width: 100%;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  &__item {
+    width: 50%;
+    transition: border-bottom 0.3s;
+    @extend .padding-bottom;
+    @include tablet {
+      width: 15vh;
+    }
+    &--active {
+      border-bottom: 5px $primary-white solid;
+    }
+    &:hover {
+      border-bottom: 5px $secondary-mercury solid;
+    }
+  }
+  &__link {
+    font-family: 'Avenir Regular';
+    font-size: 1rem;
+    text-decoration: none;
+    color: $secondary-mercury;
+    &--active {
+      font-family: 'Avenir Demi';
+      color: $primary-white;
+    }
+    &:hover {
+      color: $primary-white;
+    }
+  }
+
+}
+
+.footer {
+  background-color: $primary-black;
+  color: $primary-white;
+  &__wrapper {
+    @extend .wrapper;
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      align-items: baseline;
+    }
+    .logo {
+      display: none;
+      @include tablet {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+      }
+    
+    }
+  }
+  &__img-container {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    @extend .padding-bottom;
+    @include tablet {
+      width: 25%;
+      height: 3rem;
+      justify-content: space-around;
+    }
+  }
+  &__information {
+    display: flex;
+    flex-direction: column;
+    @extend .padding-bottom;
+    @include tablet {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .information__item {
+      display: flex;
+      flex-direction: column;
+      @extend .padding-bottom;
+    }
+  }
+  &__logo {
+    width: 8.75rem;
+    @extend .padding-bottom;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__copyright {
+    @extend .padding-bottom;
+  }
 }
