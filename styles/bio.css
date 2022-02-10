@@ -221,6 +221,7 @@ table {
 }
 .nav__item {
   width: 50%;
+  transition: border-bottom 0.3s;
 }
 @media screen and (min-width: 768px) {
   .nav__item {
@@ -241,6 +242,9 @@ table {
 }
 .nav__link--active {
   font-family: "Avenir Demi";
+  color: #ffffff;
+}
+.nav__link:hover {
   color: #ffffff;
 }
 
