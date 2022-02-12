@@ -103,3 +103,99 @@
         }
     }
 }
+.comments {
+    &__wrapper {
+        @extend .wrapper;
+        @extend .padding-bottom;
+    }
+    &__container{
+        .form {
+            @include flexbox();
+            justify-content: center;
+            @extend .padding-bottom;
+            &__img {
+                position: relative;
+                top: 20px;
+                right: 20px;
+                border-radius: 50%;
+                height: 2.25rem;
+                width: 2.25rem;
+                object-fit: cover;
+                object-position: left;
+                @include tablet {
+                    height: 3rem;
+                    width: 3rem;
+                }
+            }
+            &__fields {
+                @include flexbox(column);
+            }
+            &__label {
+                padding-bottom: 4px;
+                color: $secondary-mercury;
+            }
+            &__input {
+                height: 2.25rem;
+                border-radius: 4px;
+                padding: .75rem;
+                border: 1px solid $secondary-mercury;
+                margin-bottom: 1rem;
+                @include tablet {
+                    height: 3rem;
+                    padding: 1rem;
+                    width: 60vw;
+                    max-width: 31.25rem;
+                }
+                &:focus{
+                    outline: none;
+                    border-color: $primary-black;
+                }
+                &--error {
+                    border: 1px solid #d22d2d;
+                }
+                &--textarea {
+                    resize: none;
+                    height: auto;
+                    @include fonts();
+                }
+            }
+        }
+    }
+    &__display {
+        display: flex;
+        justify-content: center;
+        // padding: 1rem;
+        .card {
+            @include flexbox();
+            justify-content: center;
+            width: 100%;
+            &__img {
+                position: relative;
+                top: 20px;
+                right: 10px;
+                border-radius: 50%;
+                height: 2.25rem;
+                width: 2.25rem;
+                object-fit: cover;
+                object-position: left;
+                @include tablet {
+                    height: 3rem;
+                    width: 3rem;
+                }
+            }
+            &__section {
+                justify-content: center;
+                max-width: 14.1875rem;
+                padding: 1rem;
+                @include tablet {
+                    max-width: 31.25rem;
+                }
+                
+            }
+            &__title {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
