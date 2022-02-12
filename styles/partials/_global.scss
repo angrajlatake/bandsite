@@ -138,7 +138,7 @@ p {
 
     @extend .padding-bottom;
     @include tablet {
-      width: 15vh;
+      width: 10vh;
       margin-bottom: -5px;
     }
     &--active {
@@ -189,7 +189,7 @@ p {
   }
   &__img-container {
     @include flexbox();
-    width: 40%;
+    width: 10rem;
     justify-content: space-between;
     @extend .padding-bottom;
     @include tablet {
