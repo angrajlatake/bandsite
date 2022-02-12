@@ -38,6 +38,7 @@
     .quote {
         &__by {
             font-size: 1rem;
+            font-weight: 600;
         }
     }
     &__img-container {
@@ -60,8 +61,7 @@
 }
 .description {
     &__title {
-        font-weight: bold;
-        font-size: 1rem;
+        // font-size: 1rem;
     }
     &__wrapper {
         @extend .wrapper;
@@ -70,7 +70,7 @@
         }
     }
     &__container {
-        @include desktop {
+        @include tablet {
             display: flex;
             gap: 16px;
         }
@@ -87,8 +87,7 @@
         @extend .wrapper
     }
     &__img-container {
-        display: flex;
-        flex-direction: column;
+        @include flexbox(column);
         @include tablet {
             flex-direction: row;
             flex-wrap: wrap;
