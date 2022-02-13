@@ -435,11 +435,9 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 20px;
 }
 .comments__container .form__img {
-  position: relative;
-  top: 20px;
-  right: 20px;
   border-radius: 50%;
   height: 2.25rem;
   width: 2.25rem;
@@ -447,6 +445,7 @@ p {
      object-fit: cover;
   -o-object-position: left;
      object-position: left;
+  margin-top: 20px;
 }
 @media screen and (min-width: 768px) {
   .comments__container .form__img {
@@ -468,6 +467,7 @@ p {
   padding: 0.75rem;
   border: 1px solid #e1e1e1;
   margin-bottom: 1rem;
+  width: 75vw;
 }
 @media screen and (min-width: 768px) {
   .comments__container .form__input {
@@ -494,16 +494,19 @@ p {
   display: flex;
   justify-content: center;
 }
-.comments__display .card {
+.comments__list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
 }
-.comments__display .card__img {
-  position: relative;
-  top: 20px;
-  right: 10px;
+.comments__list .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.comments__list .item__img {
   border-radius: 50%;
   height: 2.25rem;
   width: 2.25rem;
@@ -513,22 +516,28 @@ p {
      object-position: left;
 }
 @media screen and (min-width: 768px) {
-  .comments__display .card__img {
+  .comments__list .item__img {
     height: 3rem;
     width: 3rem;
   }
 }
-.comments__display .card__section {
+.comments__list .item__section {
   justify-content: center;
-  max-width: 14.1875rem;
-  padding: 1rem;
+  width: 75vw;
 }
 @media screen and (min-width: 768px) {
-  .comments__display .card__section {
+  .comments__list .item__section {
+    width: 60vw;
     max-width: 31.25rem;
   }
 }
-.comments__display .card__title {
+.comments__list .item__title {
   display: flex;
   justify-content: space-between;
+}
+.comments__list .item__name {
+  font-weight: 600;
+}
+.comments__list .item__date {
+  color: #e1e1e1;
 }/*# sourceMappingURL=bio.css.map */
