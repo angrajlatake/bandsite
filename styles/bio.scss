@@ -10,6 +10,9 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    @include desktop {
+        height: 60vh;
+    }
 
     &__overlay {
         background-color: #32323280;

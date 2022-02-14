@@ -21,9 +21,9 @@ const commentsArrey = [
 const form = document.querySelector(".form");
 const commentsList = document.querySelector(".comments__list");
 
-showComments();
+displayComments();
 
-function showComments() {
+function displayComments() {
   commentsList.innerHTML = "";
   commentsArrey.forEach((comment) => {
     const commentLi = document.createElement("li");
@@ -75,5 +75,5 @@ form.addEventListener("submit", (event) => {
     quote: submittedComment.value,
   });
   event.target.reset();
-  showComments();
+  displayComments();
 });

@@ -108,6 +108,9 @@
                 }
                 &--selected {
                     background-color: $secondary-mercury;
+                    &:hover {
+                        background-color: $secondary-mercury;
+                    }
                 }
                 td {
                     padding: 1rem;

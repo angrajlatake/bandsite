@@ -359,6 +359,11 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 60vh;
+  }
+}
 .hero__overlay {
   background-color: #32323280;
   width: 100%;

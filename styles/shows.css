@@ -466,6 +466,9 @@ p {
 .shows .table__body .table__row--selected {
   background-color: #e1e1e1;
 }
+.shows .table__body .table__row--selected:hover {
+  background-color: #e1e1e1;
+}
 .shows .table__body .table__row td {
   padding: 1rem;
   display: block;
