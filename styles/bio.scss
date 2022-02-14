@@ -151,9 +151,12 @@
                     outline: none;
                     border-color: $primary-black;
                 }
-                &--error {
-                    border: 1px solid #d22d2d;
+                &:invalid{
+                    border-color: #d22d2d;
                 }
+                // &--error {
+                //     border: 1px solid #d22d2d;
+                // }
                 &--textarea {
                     resize: none;
                     height: auto;

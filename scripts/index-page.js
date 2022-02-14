@@ -21,20 +21,10 @@ const commentsArrey = [
 const form = document.querySelector(".form");
 const commentsList = document.querySelector(".comments__list");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  commentsArrey.unshift({
-      name: event.target.formName.value,
-      dateCreated: Date.now(),
-      quote: event.target.formComment.value
-  });
-  event.target.reset();
-  showComments();
-  console.log(typeof event.target.formName.value);
-});
+showComments();
 
 function showComments() {
-    commentsList.innerHTML = ""
+  commentsList.innerHTML = "";
   commentsArrey.forEach((comment) => {
     const commentLi = document.createElement("li");
     commentLi.classList.add("item");
@@ -50,28 +40,40 @@ function showComments() {
     commentLi.appendChild(itemSection);
 
     const itemHeader = document.createElement("div");
-    itemHeader.classList.add('item__title');
+    itemHeader.classList.add("item__title");
     itemSection.appendChild(itemHeader);
-    
-    const itemName = document.createElement('p');
-    itemName.classList.add('item__name');
+
+    const itemName = document.createElement("p");
+    itemName.classList.add("item__name");
     itemName.innerHTML = comment.name;
     itemHeader.appendChild(itemName);
 
-    const itemDate = document.createElement('p');
-    itemDate.classList.add('item__date');
-    itemDate.innerText = new Date(comment.dateCreated).toLocaleDateString('en-US');
+    const itemDate = document.createElement("p");
+    itemDate.classList.add("item__date");
+    itemDate.innerText = new Date(comment.dateCreated).toLocaleDateString(
+      "en-US"
+    );
     itemHeader.appendChild(itemDate);
 
-    const itemBody = document.createElement('div');
-    itemBody.classList.add('item__body');
+    const itemBody = document.createElement("div");
+    itemBody.classList.add("item__body");
     itemSection.appendChild(itemBody);
 
-    const bodyCopy = document.createElement('p');
+    const bodyCopy = document.createElement("p");
     bodyCopy.innerText = comment.quote;
     itemBody.appendChild(bodyCopy);
   });
 }
 
-showComments();
-
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const submittedName = event.target.formName;
+  const submittedComment = event.target.formComment;
+  commentsArrey.unshift({
+    name: submittedName.value,
+    dateCreated: Date.now(),
+    quote: submittedComment.value,
+  });
+  event.target.reset();
+  showComments();
+});

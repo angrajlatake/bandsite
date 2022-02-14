@@ -481,8 +481,8 @@ p {
   outline: none;
   border-color: #323232;
 }
-.comments__container .form__input--error {
-  border: 1px solid #d22d2d;
+.comments__container .form__input:invalid {
+  border-color: #d22d2d;
 }
 .comments__container .form__input--textarea {
   resize: none;
