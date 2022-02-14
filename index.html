@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/bio.css" />
-    <link rel="stylesheet" href="./styles/partials/global.css" />
     <title>Band Site</title>
   </head>
   <body>
@@ -61,11 +60,9 @@
                   board’”
                 </h3>
               </blockquote>
-              <figcaption class="quote__by">
                 <p class="quote__by">
                   &mdash; Bryan Teddy, lead vocalist of The Bees Knees
                 </p>
-              </figcaption>
             </div>
           </div>
         </div>
@@ -163,16 +160,16 @@
                 src="./assets/Images/Mohan-muruge.jpg"
                 alt="mohan muruge"
               />
-              <form class="form__fields" action="">
-                <label class="form__label label-btn" for="name">name</label>
+              <form class="form__fields">
+                <label class="form__label label-btn">name</label>
                 <input
                   class="form__input"
                   id="formName"
                   type="text"
                   placeholder="Enter your Name"
-    
+                  name="name"
                 />
-                <label class="form__label label-btn" for="comment-input"
+                <label class="form__label label-btn"
                   >comment</label
                 >
                 <textarea
@@ -292,7 +289,7 @@
 
         <div class="footer__copyright">
           <p class="footer-copy">
-            Copyright The Bees Knees &copy 2021 All Rights Reserved
+            Copyright The Bees Knees &copy; 2021 All Rights Reserved
           </p>
         </div>
       </div>

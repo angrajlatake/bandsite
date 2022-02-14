@@ -90,11 +90,11 @@ table {
   }
 }
 
-.padding-bottom, .hero__text, .shows .table__body .table__row td:before, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
+.padding-bottom, .hero__text, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .padding-bottom, .hero__text, .shows .table__body .table__row td:before, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
+  .padding-bottom, .hero__text, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
     padding-bottom: 1.5rem;
   }
 }
@@ -237,7 +237,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .nav__list {
-    gap: 1rem;
+    gap: 3rem;
   }
 }
 .nav__item {
@@ -246,7 +246,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .nav__item {
-    width: 10vh;
+    width: auto;
     margin-bottom: -5px;
   }
 }
@@ -352,11 +352,11 @@ p {
   }
 }
 
-.table-padding, .shows .table__body .table__row td, .shows .table__body .table__row, .shows .table__header tr th {
+.table-padding, .shows .table__header tr th {
   padding: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .table-padding, .shows .table__body .table__row td, .shows .table__body .table__row, .shows .table__header tr th {
+  .table-padding, .shows .table__header tr th {
     padding: 1.5rem 1.125rem;
   }
 }
@@ -369,6 +369,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .hero {
+    min-height: 31.25rem;
     height: 45vh;
   }
 }
@@ -421,6 +422,26 @@ p {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .shows__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+.shows__header {
+  padding-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__header {
+    padding-left: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__schedule {
+    padding-top: 2.7rem;
+  }
+}
 .shows .table {
   table-layout: fixed;
   width: 100%;
@@ -442,12 +463,17 @@ p {
 .shows .table__body .table__row:hover {
   background-color: #fafafa;
 }
+.shows .table__body .table__row--selected {
+  background-color: #e1e1e1;
+}
 .shows .table__body .table__row td {
+  padding: 1rem;
   display: block;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
   .shows .table__body .table__row td {
+    padding: 1.5rem 1.125rem;
     display: table-cell;
     width: auto;
   }
@@ -463,6 +489,7 @@ p {
 }
 .shows .table__body .table__row td .btn {
   width: 100%;
+  min-width: 10rem;
 }
 @media screen and (min-width: 768px) {
   .shows .table__body .table__row td .btn {

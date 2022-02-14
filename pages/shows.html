@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/shows.css" />
-    <link rel="stylesheet" href="../styles/partials/global.css" />
+
     <title>Shows</title>
   </head>
   <body>
@@ -52,7 +52,7 @@
                 scrolling="no"
                 frameborder="no"
                 allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/865820443&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/865820443&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
               ></iframe>
             </div>
           </div>
@@ -75,15 +75,19 @@
               </thead>
               <tbody class="table__body">
                 <tr class="table__row">
-                  <td data-label= 'date' class="table__date">Monday Sept 60 2021</td>
-                  <td data-label= 'venue'>Ronald Lance</td>
-                  <td data-label= 'city'>San Fransisco</td>
+                  <td data-label="date" class="table__date">
+                    Monday Sept 60 2021
+                  </td>
+                  <td data-label="venue">Ronald Lance</td>
+                  <td data-label="city">San Fransisco</td>
                   <td><button class="btn">buy tickets</button></td>
                 </tr>
                 <tr class="table__row">
-                  <td data-label= 'date' class="table__date">Monday Sept 60 2021</td>
-                  <td data-label= 'venue'>Ronald Lance</td>
-                  <td data-label= 'city'>San Fransisco</td>
+                  <td data-label="date" class="table__date">
+                    Monday Sept 60 2021
+                  </td>
+                  <td data-label="venue">Ronald Lance</td>
+                  <td data-label="city">San Fransisco</td>
                   <td><button class="btn">buy tickets</button></td>
                 </tr>
               </tbody>
@@ -169,10 +173,11 @@
 
         <div class="footer__copyright">
           <p class="footer-copy">
-            Copyright The Bees Knees &copy 2021 All Rights Reserved
+            Copyright The Bees Knees &copy; 2021 All Rights Reserved
           </p>
         </div>
       </div>
     </footer>
+    <script src="../scripts/build-shows-page.js"></script>
   </body>
 </html>

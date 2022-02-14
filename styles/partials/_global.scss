@@ -130,7 +130,7 @@ p {
     margin: 0;
     text-align: center;
     @include tablet {
-      gap: 1rem;
+      gap: 3rem;
     }
   }
   &__item {
@@ -139,7 +139,7 @@ p {
 
     @extend .padding-bottom;
     @include tablet {
-      width: 10vh;
+      width: auto;
       margin-bottom: -5px;
     }
     &--active {
@@ -171,6 +171,7 @@ p {
   color: $primary-white;
   &__wrapper {
     @extend .wrapper;
+
   }
   &__title {
     @include flexbox(column);

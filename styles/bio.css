@@ -237,7 +237,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .nav__list {
-    gap: 1rem;
+    gap: 3rem;
   }
 }
 .nav__item {
@@ -246,7 +246,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .nav__item {
-    width: 10vh;
+    width: auto;
     margin-bottom: -5px;
   }
 }
