@@ -83,6 +83,7 @@ p {
 .label-btn {
   @include fonts(600);
   text-transform: uppercase;
+  color: $secondary-mercury;
   font-size: 0.625rem;
   line-height: 1.25rem;
   @include tablet {

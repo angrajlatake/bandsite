@@ -75,26 +75,26 @@ table {
   margin: 0;
 }
 
-.wrapper, .hero__wrapper, .footer__wrapper {
+.wrapper, .hero__wrapper, .shows__wrapper, .footer__wrapper {
   margin: 0 1rem;
 }
 @media screen and (min-width: 768px) {
-  .wrapper, .hero__wrapper, .footer__wrapper {
+  .wrapper, .hero__wrapper, .shows__wrapper, .footer__wrapper {
     margin: 0 2.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .wrapper, .hero__wrapper, .footer__wrapper {
+  .wrapper, .hero__wrapper, .shows__wrapper, .footer__wrapper {
     max-width: 64rem;
     margin: 0 auto;
   }
 }
 
-.padding-bottom, .hero__text, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
+.padding-bottom, .hero__text, .shows .table__body .table__row td:before, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .padding-bottom, .hero__text, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
+  .padding-bottom, .hero__text, .shows .table__body .table__row td:before, .footer__copyright, .footer__logo, .footer__information .container__item, .footer__information, .footer__img-container, .nav__item, .nav__logo-img, h3 {
     padding-bottom: 1.5rem;
   }
 }
@@ -173,15 +173,16 @@ p {
   }
 }
 
-.label-btn, .btn {
+.label-btn, .shows .table__body .table__row td:before, .btn {
   font-family: "AvenirNext LT Pro";
   font-weight: 600;
   text-transform: uppercase;
+  color: #e1e1e1;
   font-size: 0.625rem;
   line-height: 1.25rem;
 }
 @media screen and (min-width: 768px) {
-  .label-btn, .btn {
+  .label-btn, .shows .table__body .table__row td:before, .btn {
     font-size: 0.75rem;
     line-height: 1.25rem;
   }
@@ -351,6 +352,15 @@ p {
   }
 }
 
+.table-padding, .shows .table__body .table__row td, .shows .table__body .table__row, .shows .table__header tr th {
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .table-padding, .shows .table__body .table__row td, .shows .table__body .table__row, .shows .table__header tr th {
+    padding: 1.5rem 1.125rem;
+  }
+}
+
 .hero {
   background-image: url(../assets/Images/hero-shows.jpg);
   background-position: center;
@@ -409,4 +419,56 @@ p {
   .hero__sound {
     align-self: center;
   }
+}
+
+.shows .table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: center;
+}
+.shows .table__header tr {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows .table__header tr {
+    display: table-row;
+  }
+}
+.shows .table__body .table__row {
+  border-bottom: 1px solid #e1e1e1;
+}
+.shows .table__body .table__row:hover {
+  background-color: #fafafa;
+}
+.shows .table__body .table__row td {
+  display: block;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .shows .table__body .table__row td {
+    display: table-cell;
+    width: auto;
+  }
+}
+.shows .table__body .table__row td:before {
+  content: attr(data-label);
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .shows .table__body .table__row td:before {
+    display: none;
+  }
+}
+.shows .table__body .table__row td .btn {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .shows .table__body .table__row td .btn {
+    width: auto;
+  }
+}
+.shows .table__body .table__date {
+  font-weight: 600;
 }/*# sourceMappingURL=shows.css.map */

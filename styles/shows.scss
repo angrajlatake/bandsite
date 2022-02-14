@@ -3,6 +3,13 @@
 @use './partials/variables' as *;
 @use './partials/global.scss' as *;
 
+.table-padding {
+    padding: 1rem;
+    @include tablet {
+        padding: 1.5rem 1.125rem;
+    }
+}
+
 .hero {
     background-image: url(../assets/Images/hero-shows.jpg);
     // min-height: 55vw;
@@ -52,4 +59,63 @@
             align-self: center;
         }
     }
+}
+.shows {
+    &__wrapper {
+        @extend .wrapper;
+    }
+    .table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        text-align:left;
+        vertical-align: center;
+        &__header {
+            tr {
+                display: none;
+                @include tablet {
+                    display: table-row;
+                }
+                th {
+                    @extend .table-padding;
+                }
+            }
+        }
+        &__body {
+            .table__row {
+                @extend .table-padding;
+                border-bottom: 1px solid $secondary-mercury;
+                &:hover {
+                    background-color: $secondary-alabaster;
+                }
+                td {
+                    @extend .table-padding;
+                    display: block;
+                    width: 100%;
+                    @include tablet {
+                        display: table-cell;
+                        width: auto;
+                    }
+                    &:before {
+                        @extend .label-btn;
+                        content: attr(data-label);
+                        display: block;
+                        @extend .padding-bottom;
+                        @include tablet {
+                            display: none;
+                        }
+                    }
+                    .btn {
+                        width: 100%;
+                        @include tablet {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .table__date {
+                font-weight: 600;
+            }
+        }
+    } 
 }
