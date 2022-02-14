@@ -168,7 +168,7 @@
         // padding: 1rem;
     }
     &__list {
-        @include flexbox();
+        @include flexbox(column);
         justify-content: center;
         width: 100%;
 
@@ -176,8 +176,11 @@
             @include flexbox();
             justify-content: center;
             gap: 1.25rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid $secondary-mercury;
+            margin: auto;
             &__img {
-
+                background-color: $secondary-mercury;
                 border-radius: 50%;
                 height: 2.25rem;
                 width: 2.25rem;

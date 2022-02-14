@@ -496,7 +496,7 @@ p {
 }
 .comments__list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
 }
@@ -505,8 +505,12 @@ p {
   flex-direction: row;
   justify-content: center;
   gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e1e1e1;
+  margin: auto;
 }
 .comments__list .item__img {
+  background-color: #e1e1e1;
   border-radius: 50%;
   height: 2.25rem;
   width: 2.25rem;
