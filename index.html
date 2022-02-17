@@ -8,6 +8,7 @@
     <title>Band Site</title>
   </head>
   <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <header>
       <nav class="nav">
         <div class="nav__wrapper">
@@ -60,9 +61,9 @@
                   board’”
                 </h3>
               </blockquote>
-                <p class="quote__by">
-                  &mdash; Bryan Teddy, lead vocalist of The Bees Knees
-                </p>
+              <p class="quote__by">
+                &mdash; Bryan Teddy, lead vocalist of The Bees Knees
+              </p>
             </div>
           </div>
         </div>
@@ -170,10 +171,8 @@
                   name="name"
                   required
                   oninvalid="this.style.border = '1px solid #d22d2d';"
-                >
-                <label class="form__label label-btn"
-                  >comment</label
-                >
+                />
+                <label class="form__label label-btn">comment</label>
                 <textarea
                   class="form__input form__input--textarea"
                   name="comment-input"
@@ -210,6 +209,20 @@
                         nostrum incidunt odit. Aspernatur odit error
                         perspiciatis, at aliquam suscipit reiciendis.
                       </p>
+                      <div class="item__footer">
+                        <a class="item__actions item__actions--like" href="">
+                          <img class="like-img"
+                              src="./assets/Icons/SVG/icon-like.svg"
+                              alt="like button"
+                            />
+                          <p class="like-counter">
+                            15
+                          </p>
+                        </a>
+                        <a class="item__actions item__actions--delete" href="">
+                          <p>Delete</p>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </li>

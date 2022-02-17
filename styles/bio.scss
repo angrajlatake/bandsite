@@ -210,6 +210,18 @@
             &__date {
                 color: $secondary-mercury;
             }
+            &__footer {
+                display: flex;
+                justify-content: space-between;
+                margin-top: .5rem;
+            }
+            &__actions {
+                text-decoration: none;
+                display: flex;
+                align-items: flex-start;
+                gap: .3125rem;
+                color: $primary-black;
+            }
         }
     }
 

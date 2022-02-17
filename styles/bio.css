@@ -547,4 +547,16 @@ p {
 }
 .comments__list .item__date {
   color: #e1e1e1;
+}
+.comments__list .item__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.comments__list .item__actions {
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3125rem;
+  color: #323232;
 }/*# sourceMappingURL=bio.css.map */
