@@ -168,7 +168,9 @@
                   type="text"
                   placeholder="Enter your Name"
                   name="name"
-                />
+                  required
+                  oninvalid="this.style.border = '1px solid #d22d2d';"
+                >
                 <label class="form__label label-btn"
                   >comment</label
                 >
@@ -181,6 +183,9 @@
                   placeholder="Add a new comment"
                   minlength="1"
                   maxlength="200"
+                  required
+                  oninvalid="this.style.border = '1px solid #d22d2d';"
+                  onvalid="this.style.border = '1px solid #d22d2d';"
                 ></textarea>
                 <button class="btn label-btn" type="submit">comment</button>
               </form>

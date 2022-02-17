@@ -18,6 +18,11 @@ const commentsArrey = [
       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
 ];
+const link ="https://project-1-api.herokuapp.com/comments"
+const apikey ="?api_key=3e76ec52-db2a-4564-99d4-11b55158c9e7"
+
+
+
 const form = document.querySelector(".form");
 const commentsList = document.querySelector(".comments__list");
 
