@@ -1,42 +1,11 @@
-// const showsArrey = [
-//   {
-//     date: 1630900800000,
-//     venue: "Ronald Lane ",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: 1632196800000,
-//     venue: "Pier 3 East ",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: 1634270400000,
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: 1636171200000,
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: 1637902800000,
-//     venue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: 1639544400000,
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
+
 const link = "https://project-1-api.herokuapp.com/showdates";
 const apiKey = "?api_key=3e76ec52-db2a-4564-99d4-11b55158c9e7";
 
 const tableBody = document.querySelector(".table__body");
 
 showTable();
-
+//function takes data from api response and returns table of schedule of shows on the page
 function showTable() {
   const getShows = axios.get(link + apiKey);
   getShows.then((res) => {
@@ -80,6 +49,7 @@ function showTable() {
   });
 }
 
+//On click, clicked row is highlighted. removes all other highlights.
 tableBody.addEventListener("click", (event) => {
   const selectedRow = event.target.parentElement;
   const allRows = document.querySelectorAll(".table__row");
