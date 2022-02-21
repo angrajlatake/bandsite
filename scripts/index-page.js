@@ -1,6 +1,6 @@
 const link = "https://project-1-api.herokuapp.com/comments";
 const apiKey = "?api_key=3e76ec52-db2a-4564-99d4-11b55158c9e7";
-
+//function takes in comment data and return html card with format
 function displayComment(comment){
         const commentLi = document.createElement("li");
       commentLi.classList.add("item");
@@ -70,7 +70,7 @@ function displayComment(comment){
       deleteLink.setAttribute("value", "delete");
       itemFooter.appendChild(deleteLink);
 }
-
+//function returns comments card list from api response data
 function showComments() {
   const getComments = axios.get(link + apiKey);
   getComments.then((res) => {
@@ -120,7 +120,7 @@ itemActions.addEventListener("click", (event) => {
     } else {
       const delComment = axios.delete(link + "/" + userId + apiKey);
       delComment.then((res) => {
-        displayComments();
+        showComments();
       });
     }
   }

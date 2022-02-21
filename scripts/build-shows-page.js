@@ -56,9 +56,7 @@ function showTable() {
         month: "short",
         day: "numeric",
       };
-      tableDate.innerHTML = new Date(Number(show.date)).toLocaleDateString(
-        "en-US",
-        options
+      tableDate.innerHTML = new Date(Number(show.date)).toDateString(
       );
       tableRow.appendChild(tableDate);
 
