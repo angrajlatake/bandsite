@@ -173,7 +173,7 @@ p {
   }
 }
 
-.label-btn, .shows .table__body .table__row td:before, .btn {
+.label-btn, .shows .table__body .table__row .cell:before, .btn {
   font-family: "AvenirNext LT Pro";
   font-weight: 600;
   text-transform: uppercase;
@@ -182,7 +182,7 @@ p {
   line-height: 1.25rem;
 }
 @media screen and (min-width: 768px) {
-  .label-btn, .shows .table__body .table__row td:before, .btn {
+  .label-btn, .shows .table__body .table__row .cell:before, .btn {
     font-size: 0.75rem;
     line-height: 1.25rem;
   }
@@ -353,11 +353,11 @@ p {
   }
 }
 
-.table-padding, .shows .table__header tr th {
+.table-padding, .shows .table__header .table__row .cell {
   padding: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .table-padding, .shows .table__header tr th {
+  .table-padding, .shows .table__header .table__row .cell {
     padding: 1.5rem 1.125rem;
   }
 }
@@ -427,7 +427,7 @@ p {
   .shows__wrapper {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 5rem;
   }
 }
 .shows__header {
@@ -441,6 +441,7 @@ p {
 @media screen and (min-width: 1280px) {
   .shows__schedule {
     padding-top: 2.7rem;
+    width: 100%;
   }
 }
 .shows .table {
@@ -450,54 +451,68 @@ p {
   text-align: left;
   vertical-align: center;
 }
-.shows .table__header tr {
+.shows .table__header .table__row {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .shows .table__header tr {
-    display: table-row;
+  .shows .table__header .table__row {
+    display: flex;
+    flex-direction: row;
   }
 }
+.shows .table__header .table__row .cell {
+  flex: 1;
+}
 .shows .table__body .table__row {
+  display: block;
   border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 768px) {
+  .shows .table__body .table__row {
+    display: flex;
+    align-items: center;
+  }
 }
 .shows .table__body .table__row:hover {
   background-color: #fafafa;
 }
-.shows .table__body .table__row--selected {
-  background-color: #e1e1e1;
+@media screen and (min-width: 768px) {
+  .shows .table__body .table__row--selected {
+    background-color: #e1e1e1;
+  }
+  .shows .table__body .table__row--selected:hover {
+    background-color: #e1e1e1;
+  }
 }
-.shows .table__body .table__row--selected:hover {
-  background-color: #e1e1e1;
-}
-.shows .table__body .table__row td {
+.shows .table__body .table__row .cell {
   padding: 1rem;
   display: block;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .shows .table__body .table__row td {
+  .shows .table__body .table__row .cell {
+    flex: 1;
     padding: 1.5rem 1.125rem;
     display: table-cell;
     width: auto;
   }
 }
-.shows .table__body .table__row td:before {
+.shows .table__body .table__row .cell:before {
   content: attr(data-label);
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .shows .table__body .table__row td:before {
+  .shows .table__body .table__row .cell:before {
     display: none;
   }
 }
-.shows .table__body .table__row td .btn {
+.shows .table__body .table__row .cell .btn {
   width: 100%;
   min-width: 10rem;
 }
 @media screen and (min-width: 768px) {
-  .shows .table__body .table__row td .btn {
-    width: auto;
+  .shows .table__body .table__row .cell .btn {
+    width: 10.3125rem;
   }
 }
 .shows .table__body .table__date {

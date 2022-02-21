@@ -43,34 +43,33 @@ function showTable() {
     const showsArrey = res.data;
     tableBody.innerHTML = "";
     showsArrey.forEach((show) => {
-      const tableRow = document.createElement("tr");
+      const tableRow = document.createElement("div");
       tableRow.classList.add("table__row");
       tableBody.appendChild(tableRow);
 
-      const tableDate = document.createElement("td");
+      const tableDate = document.createElement("span");
       tableDate.classList.add("table__date");
+      tableDate.classList.add("cell")
       tableDate.setAttribute("data-label", "date");
-      const options = {
-        weekday: "short",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      };
+
       tableDate.innerHTML = new Date(Number(show.date)).toDateString(
       );
       tableRow.appendChild(tableDate);
 
-      const tableVenue = document.createElement("td");
+      const tableVenue = document.createElement("span");
       tableVenue.setAttribute("data-label", "venue");
+      tableVenue.classList.add("cell")
       tableVenue.innerHTML = show.place;
       tableRow.appendChild(tableVenue);
 
-      const tableCity = document.createElement("td");
+      const tableCity = document.createElement("span");
       tableCity.setAttribute("data-label", "city");
+      tableCity.classList.add("cell")
       tableCity.innerHTML = show.location;
       tableRow.appendChild(tableCity);
 
-      const btnCell = document.createElement("td");
+      const btnCell = document.createElement("span");
+      btnCell.classList.add("cell")
       tableRow.appendChild(btnCell);
 
       const tableBtn = document.createElement("button");
@@ -83,5 +82,9 @@ function showTable() {
 
 tableBody.addEventListener("click", (event) => {
   const selectedRow = event.target.parentElement;
+  const allRows = document.querySelectorAll(".table__row");
+  allRows.forEach((row)=>{
+    row.classList.remove("table__row--selected");
+  })
   selectedRow.classList.add("table__row--selected");
 });
