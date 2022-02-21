@@ -71,7 +71,7 @@ function displayComment(comment){
       itemFooter.appendChild(deleteLink);
 }
 //function returns comments card list from api response data
-function showComments() {
+function showCommentsList() {
   const getComments = axios.get(link + apiKey);
   getComments.then((res) => {
     const commentsData = res.data;
@@ -88,24 +88,26 @@ function showComments() {
 
 const form = document.querySelector(".form");
 const commentsList = document.querySelector(".comments__list");
-showComments();
-
+showCommentsList();
+//add comment once the submit button is clicked
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const submittedName = event.target.formName;
   const submittedComment = event.target.formComment;
-  const postedComment = {
-    name: submittedName.value,
-    comment: submittedComment.value,
-  };
-  const addComment = axios.post(link + apiKey, postedComment);
-  addComment.then((res) => {
-    event.target.reset();
-    showComments();
-  });
+  if (formValidation(submittedName,submittedComment)) {
+    const postedComment = {
+      name: submittedName.value,
+      comment: submittedComment.value,
+    };
+    const addComment = axios.post(link + apiKey, postedComment);
+    addComment.then((res) => {
+      event.target.reset();
+      showCommentsList();
+    });
+  }
 });
 
-
+// listens for clicks on comment like and delete button of a comment and takes action accordingly
 const itemActions = document.querySelector(".comments__list");
 
 itemActions.addEventListener("click", (event) => {
@@ -115,13 +117,32 @@ itemActions.addEventListener("click", (event) => {
     if (event.target.getAttribute("value") === "like") {
       const addLike = axios.put(link + "/" + userId + "/like" + apiKey);
       addLike.then((res) => {
-        showComments();
+        showCommentsList();
       });
     } else {
       const delComment = axios.delete(link + "/" + userId + apiKey);
       delComment.then((res) => {
-        showComments();
+        showCommentsList();
       });
     }
   }
 });
+
+//function check if the text added in the field is valid characters
+function formValidation (nameField, commentField) {
+  const re = /^[a-zA-Z]/
+  if (!re.test(nameField.value)) {
+    nameField.focus();
+    nameField.value = "";
+    nameField.classList.add("form__input--error");
+    return false
+
+  } else if (!re.test(commentField.value)) {
+      commentField.focus();
+      commentField.value = ""
+      commentField.classList.add("form__input--error");
+      return false
+  } else {
+    return true
+  }
+}

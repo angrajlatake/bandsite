@@ -154,6 +154,11 @@
                     outline: none;
                     border-color: $primary-black;
                 }
+                &--error {
+                    &:focus {
+                        border-color: #d22d2d;
+                    }
+                }
                 &--textarea {
                     resize: none;
                     height: auto;
@@ -227,5 +232,4 @@
             }
         }
     }
-
 }
